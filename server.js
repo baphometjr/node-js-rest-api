@@ -28,7 +28,7 @@ app.get("/read", async (req, res) => {
     try {
         connection.query("SELECT * FROM Employees", (err, results, fields) => {
             if (err) {
-                console.log(err);
+                console.log('error', err);
                 return res.status(400).send();
             }
             res.status(200).json(results)
